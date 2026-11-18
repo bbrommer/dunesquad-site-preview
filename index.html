@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ===== LAUNCH CHECKLIST (do at launch, only with Al's approval) =====
+  1. Remove the robots noindex meta below.
+  2. Confirm canonical (placeholder https://dunesquad.golf/, hosting TBD) and make og:image/twitter:image absolute URLs.
+  3. Swap robots.txt to the launch version in its comment (allows GPTBot, PerplexityBot, ClaudeBot, Google-Extended).
+  4. Update sitemap.xml <lastmod> and URL to the real domain.
+  5. Uncomment the apple-itunes-app Smart App Banner with the real App ID; add the Android equivalent.
+  6. Replace #app-store-link-tbd and #google-play-link-tbd with real store URLs and official badges; generate the two QR codes.
+  7. JSON-LD: after the CA LLC is approved, switch Organization "name" from "DuneSquad" back to "DuneSquad LLC"; add store URLs to SoftwareApplication; keep offers/price out until pricing is decided.
+  8. Remove the DRAFT strip. Pricing FAQ restored with Al-approved eight-person/shared-expense paragraph (Al, Nov7; supersedes 11/2 omission).
+  ====================================================================== -->
+<!-- DRAFT: noindex stays until Al approves going public. -->
+<meta name="robots" content="noindex, nofollow">
+<title>DuneSquad: Golf Trip Planner and Organizer App for Your Squad</title>
+<meta name="description" content="The golf trip planner app for buddies trips: itinerary, tee times, rides, side games and trip photos in one place the whole squad shares. iPhone and Android.">
+<!-- Link previews (group chats). -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="DuneSquad: Your golf trip's caddie">
+<meta property="og:description" content="Tee times, rides, who owes who and who's winning, in one app your golf squad shares.">
+<!-- TBD: og-image path is a placeholder. Image must be 1200x630. No club crests. Needs absolute URL once hosting is chosen. -->
+<meta property="og:image" content="assets/og-image-TBD.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DuneSquad: Your golf trip's caddie">
+<meta name="twitter:description" content="Tee times, rides, who owes who and who's winning, in one app your golf squad shares.">
+<meta name="twitter:image" content="assets/og-image-TBD.png">
+<!-- LAUNCH: Smart App Banner. Uncomment and set the real App Store ID once the listing is live.
+<meta name="apple-itunes-app" content="app-id=APP_ID_TBD">
+-->
+<!-- TODO (launch): Android equivalent. Add a web app manifest "related_applications" entry with the Google Play ID (and prefer_related_applications as decided), or another approved install prompt. No JS. -->
+<link rel="canonical" href="https://dunesquad.golf/"><!-- placeholder: hosting TBD -->
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/roundel-480.png"><!-- TODO launch: export a 180x180 PNG from the roundel -->
+<meta name="theme-color" content="#3B5E3A">
+<!-- Fonts: system fonts only (Georgia and the system sans), so there is nothing to preload and no font swap shift. -->
+<!-- Structured data. Organization name is "DuneSquad" until the CA LLC is approved (GC, 2026-10-21); switch to "DuneSquad LLC" at launch per checklist item 7. FAQPage mirrors the visible FAQ (approved price paragraph restored Nov7). Add an offers block once the Trip Pass is live. -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "@id": "https://dunesquad.golf/#org",
+ "name": "DuneSquad",
+ "url": "https://dunesquad.golf/",
+ "logo": "https://dunesquad.golf/assets/roundel-480.png",
+ "email": "support@dunesquad.golf"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebSite",
+ "@id": "https://dunesquad.golf/#website",
+ "name": "DuneSquad",
+ "url": "https://dunesquad.golf/",
+ "inLanguage": "en-US",
+ "publisher": {
+  "@id": "https://dunesquad.golf/#org"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "MobileApplication",
+ "name": "DuneSquad",
+ "alternateName": "DuneSquad golf trip planner",
+ "description": "A golf trip planner app for buddies trips: one shared itinerary with tee times, rides and dinners for the whole squad, plus a trip photo feed.",
+ "featureList": ["Shared golf trip itinerary with tee times, rides and dinners", "Calendar subscription in Google, Apple or Outlook", "Shared expenses in USD, GBP or EUR, never converted", "Ten side game formats, including the Team Cup, with one Standings board", "Trip photo feed with a visitor link for family"],
+ "operatingSystem": "iOS, Android",
+ "applicationCategory": "TravelApplication",
+ "inLanguage": "en-US",
+ "publisher": {
+  "@id": "https://dunesquad.golf/#org"
+ },
+ "url": "https://dunesquad.golf/"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [{"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "One $69 Trip Pass covers the whole squad. Create your trip free; the pass unlocks invites. Split across eight people, including the organizer, that’s about $8.63 each, and less per person with a larger squad. Add the pass to your trip expenses to track everyone’s share and settle up outside the app."}}, {
+   "@type": "Question",
+   "name": "Does everyone see tee times, pickups and dinner without texting me?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Add them once and they're on the trip for everyone. Home shows what's up next, and anyone can subscribe in Google, Apple or Outlook."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Not everyone has an iPhone. Does that matter?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. DuneSquad is coming to both iPhone and Android, so the whole squad can use it."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does it work for team match play or our usual side games?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. There are ten formats, including the Team Cup, Stableford, Stroke Play, Skins, Nassau, Sixes, Wolf and Baseball. One person keys in the scores, and every game feeds one Standings board."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can it find the course info and scorecard for us?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Usually. When you open a course, the app looks for the scorecard and saves it marked \"not yet confirmed\" for you to check. You can also snap the printed card."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can friends and family follow along?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Each trip has a visitor link. Visitors see the plan and the photos and can comment and react, but never see the expenses."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "We're playing abroad. What about pounds and euros?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Log each expense in dollars, pounds or euros. Nothing is converted, and balances show separately for each currency."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does DuneSquad handle the money?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. DuneSquad doesn't handle payments. It works out who owes who and opens your payment app."
+   }
+  }
+ ]
+}
+</script>
+<style>
+:root{
+  --gold:#C4A35A; --gold-dark:#A08640; --green:#3B5E3A; --green-light:#5A7D58;
+  --sand:#F5EFE0; --sand-2:#EDE4D0; --card:#fff;
+  --text:#2C2416; --text-2:#5C4F3A; --muted:#8B7D6B; --border:#D6CBB4;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--sand);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--green)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.2;margin:0}
+h2{font-size:34px;color:var(--green)}
+h3{font-size:21px}
+p{margin:0}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dark);font-weight:800;margin-bottom:10px}
+section{padding:72px 0}
+.alt{background:var(--sand-2)}
+.icon{width:28px;height:28px;stroke:var(--green);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* Draft banner: remove before publishing */
+.draft{background:#2C2416;color:#F5EFE0;font-size:13px;text-align:center;padding:8px 16px}
+.draft b{color:var(--gold)}
+
+/* Header */
+header.top{padding:18px 0;border-bottom:1px solid var(--border)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:22px;font-weight:700;color:var(--green);text-decoration:none}
+.brand img{width:40px;height:40px}
+nav a{color:var(--text-2);text-decoration:none;font-size:15px;margin-left:22px}
+
+/* Hero */
+.hero{padding:64px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:64px;line-height:1.08;letter-spacing:-.01em;color:var(--green);margin-bottom:20px}
+.hero .sub{font-size:20px;color:var(--text-2);max-width:30em;margin-bottom:28px}
+/* App Store badge slot: official Apple artwork replaces the inner span at launch (160x54 at desktop). Not a lookalike. */
+.store{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:160px;height:54px;border-radius:10px;background:#1d1d1f;color:#fff;text-decoration:none;outline:2px dashed var(--gold);outline-offset:3px;line-height:1.15;text-align:center}
+.store b{font-size:12px;font-weight:700}
+.store small{font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-light, #D4B87A)}
+.store:hover{background:#000}
+.store.soon{background:transparent;color:inherit;border:1.5px solid #C4A35A;outline:none;cursor:default}
+.store.soon:hover{background:transparent}
+.store.soon b{font-size:14px}
+.store.soon small{color:#C4A35A;font-weight:700}
+.cta-note{margin-top:12px;font-size:14px;color:var(--muted)}
+.get-app{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-size:14px;font-weight:700;padding:9px 16px;border-radius:999px;margin-left:24px}
+.get-app:hover{background:#2f4b2e}
+.top-right{display:flex;align-items:center}
+.mid-cta{text-align:center;margin-top:44px}
+.mid-cta p{font-family:var(--serif);font-size:24px;color:var(--green);margin-bottom:16px}
+.close-cta{background:var(--green);text-align:center;padding:64px 0}
+.close-cta h2{color:#fff;margin-bottom:24px}
+.close-cta .store{outline-color:var(--gold-light, #D4B87A)}
+.placeholder-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:#fff3cd;color:#7a5b00;border:1px dashed #c9a400;border-radius:4px;padding:2px 6px;margin-left:6px;vertical-align:middle}
+
+/* Full-bleed photo band: placeholder until the final photo exists */
+.photo-band{position:relative;height:420px;padding:0;background:linear-gradient(160deg,#2f4a2e 0%,#3B5E3A 45%,#7d8a5a 75%,#d9c9a0 100%);display:flex;align-items:flex-end}
+.photo-band .label{position:absolute;top:18px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.35);color:#fff;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:6px 12px;border:1px dashed rgba(255,255,255,.7);border-radius:6px;text-align:center;max-width:90%}
+.photo-band .line{font-family:var(--serif);color:#fff;font-size:30px;padding:0 0 40px;text-shadow:0 1px 3px rgba(0,0,0,.35)}
+/* Testimonial placeholder */
+.quote{text-align:center}
+.quote blockquote{margin:0 auto;max-width:720px;font-family:var(--serif);font-size:28px;line-height:1.35;color:var(--green)}
+.quote cite{display:block;margin-top:14px;font-style:normal;font-size:15px;color:var(--text-2)}
+.quote .ph{display:inline-block;margin-bottom:14px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4d4a44;border:1px dashed #a8a49b;border-radius:4px;padding:2px 8px}
+
+/* Screenshot placeholders: gray, honest, labeled */
+.shot{background:repeating-linear-gradient(45deg,#d9d6cf,#d9d6cf 12px,#e1ded8 12px,#e1ded8 24px);border:2px dashed #a8a49b;border-radius:28px;color:#4d4a44;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;font-size:14px;line-height:1.4}
+.shot b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.shot.phone{width:340px;height:680px;margin:0 auto}
+.shot.small{width:320px;height:640px;border-radius:28px;margin:0 auto}
+
+/* Problem */
+.problem .wrap{max-width:760px;text-align:center}
+.problem h2.quotes{font-size:44px;line-height:1.25;color:var(--green);margin-bottom:22px}
+.problem p{font-size:19px;color:var(--text-2)}
+.problem .lead{font-family:var(--serif);font-size:23px;color:var(--text);margin-bottom:14px}
+.trio{display:flex;justify-content:center;gap:14px;margin:28px 0 22px;flex-wrap:wrap}
+.trio div{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:8px 16px;font-size:15px;color:var(--text-2);display:flex;align-items:center;gap:8px}
+.trio .icon{width:20px;height:20px;stroke:var(--muted)}
+
+/* Features */
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:40px 0}
+.feature + .feature{border-top:1px solid var(--border)}
+.feature.flip .text{order:2}
+.feature .head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.feature .head h3{font-size:26px;color:var(--green)}
+.feature p{color:var(--text-2);margin-bottom:12px}
+.feature ul{margin:0;padding-left:0;list-style:none;color:var(--text-2)}
+.feature li{padding-left:22px;position:relative;margin:6px 0}
+.feature li:before{content:"";position:absolute;left:4px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+
+/* How it works */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+.step{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px}
+.step .num{width:36px;height:36px;border-radius:50%;background:var(--green);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-family:var(--serif)}
+.step h3{margin-bottom:8px}
+.step p{color:var(--text-2);font-size:16px}
+
+/* Privacy strip: deliberately low-key */
+.trust{border-top:1px solid var(--border);padding:22px 0}
+.trust ul{list-style:none;margin:0;padding:0;display:flex;justify-content:center;flex-wrap:wrap;gap:8px 28px;font-size:14px;color:var(--text-2)}
+.trust li{display:flex;align-items:center;gap:7px}
+.trust .icon{width:16px;height:16px;stroke:var(--gold-dark)}
+.trust .fine{text-align:center;font-size:12.5px;color:var(--muted);margin-top:10px;max-width:760px;margin-left:auto;margin-right:auto}
+
+/* FAQ */
+.faq{max-width:780px}
+details{background:var(--card);border:1px solid var(--border);border-radius:12px;margin:12px 0;padding:0 20px}
+summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:700;font-size:17px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary .icon{width:18px;height:18px;stroke:var(--gold-dark);transition:transform .15s}
+details[open] summary .icon{transform:rotate(45deg)}
+details p{color:var(--text-2);padding-bottom:18px;font-size:16px}
+
+.soon-pill{display:inline-block;margin:0;padding:8px 16px;border:1px solid #C4A35A;border-radius:999px;font-weight:600}
+.tagline{font-size:20px;font-weight:600;color:var(--text-2);margin:6px 0 0}
+.qr1{display:flex;align-items:center;gap:14px;margin-top:14px}
+.qr.qr-big{width:110px!important;height:110px!important}
+.qr.qr-big span{inset:10px;font-size:8px}
+@media (max-width:800px){.qr1{display:none}}
+/* Footer */
+footer{border-top:1px solid var(--border);padding:40px 0;font-size:15px;color:var(--text-2)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+footer .links a{margin-left:20px;color:var(--text-2)}
+footer .brand{font-size:18px}
+footer .brand img{width:32px;height:32px}
+
+
+/* v3 additions */
+.hero{padding:56px 0 64px}
+.hero h1{font-size:66px}
+.cta-row{display:flex;align-items:center;gap:20px}
+.qr{width:96px;height:96px;border:2px dashed #a8a49b;border-radius:8px;background:repeating-linear-gradient(90deg,#2C2416 0 6px,#fff 6px 12px),#fff;background-size:12px 12px;position:relative;flex:none}
+.qr span{position:absolute;inset:18px;background:#fff;font-size:9px;line-height:1.2;text-align:center;display:flex;align-items:center;justify-content:center;color:#4d4a44;font-weight:700}
+.qr-note{font-size:13px;color:var(--muted);max-width:9em;line-height:1.3}
+.phone-frame{width:300px;height:620px;margin:0 auto;border-radius:44px;background:#1d1d1f;padding:12px;box-shadow:0 18px 40px rgba(44,36,22,.22);position:relative}
+.phone-frame:before{content:"";position:absolute;top:20px;left:50%;transform:translateX(-50%);width:84px;height:22px;border-radius:12px;background:#000;z-index:2}
+.phone-frame .shot{width:100%;height:100%;border-radius:34px;border:none;font-size:13px;padding:40px 18px 18px}
+.phone-frame.sm{width:270px;height:560px}
+.problem{padding:56px 0}
+.problem h2.quotes{font-size:40px;margin-bottom:18px}
+.green-band{background:var(--green);color:var(--sand)}
+.green-band h2,.green-band h3{color:#fff}
+.photo-band{height:560px}
+.stats{background:var(--green);color:var(--sand);padding:22px 0;text-align:center;border-top:1px solid rgba(255,255,255,.15)}
+.stats p{font-family:var(--serif);font-size:22px;letter-spacing:.01em}
+.stats small{display:block;font-size:13px;color:#cfd8c4;margin-top:4px;font-family:var(--sans)}
+.feature{padding:32px 0}
+.feature p{margin-bottom:8px}
+.break{background:var(--green);padding:56px 0;text-align:center}
+.break .eyebrow{color:var(--gold)}
+.break h2{color:#fff;font-size:36px}
+.sticky-cta{display:none}
+.intro{max-width:760px;margin:0 auto 12px;text-align:center}
+.intro p{color:var(--text-2);font-size:18px;margin-top:12px}
+.phone-frame,.photo-band,.qr{contain:layout}
+.badges{display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.qrs{display:flex;align-items:center;gap:14px}
+.qrbox{text-align:center}
+.qrbox small{display:block;font-size:11px;color:var(--muted);margin-top:4px}
+.close-cta .qrbox small{color:#cfd8c4}
+.cta-row{flex-wrap:wrap}
+.qr{width:77px;height:77px}
+.qr span{inset:12px;font-size:7.5px}
+.qrbox small{white-space:nowrap}
+.steps .step{background:#fff}
+@media (min-width:821px){.hero .cta-note{display:none}}
+@media (max-width:820px){
+  body{font-size:16px;padding-bottom:72px}
+  section{padding:48px 0}
+  nav{display:none}
+  .top-right .get-app{display:none}
+  header.top{padding:12px 0}
+  .hero{padding:20px 0 36px}
+  .hero .wrap{grid-template-columns:1fr;gap:18px;text-align:center}
+  .hero h1{font-size:38px;margin-bottom:10px}
+  .hero .sub{font-size:16px;margin:0 auto 16px;line-height:1.45}
+  .cta-row{justify-content:center}
+  .qrs{display:none}
+  .badges{flex-wrap:nowrap;gap:10px}
+  .store{width:160px;height:50px}
+  .store b{font-size:11px;white-space:nowrap}
+  .store small{font-size:8.5px}
+  .hero .cta-note{color:var(--text-2);font-size:15px;font-weight:600;margin-top:14px}
+  .phone-frame{width:250px;height:516px}
+  .phone-frame.sm{width:240px;height:496px}
+  .problem h2.quotes{font-size:26px}
+  .photo-band{height:340px}
+  .photo-band .line{font-size:22px;padding-bottom:24px}
+  .stats p{font-size:17px}
+  .break h2{font-size:28px}
+  .quote blockquote{font-size:22px}
+  h2{font-size:28px}
+  .feature{grid-template-columns:1fr;gap:22px;padding:28px 0}
+  .feature.flip .text{order:0}
+  .steps{grid-template-columns:1fr}
+  .trust ul{flex-direction:column;align-items:flex-start;gap:8px}
+  footer .wrap{flex-direction:column;align-items:flex-start}
+  footer .links a{margin:0 20px 0 0}
+  .sticky-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(245,239,224,.97);border-top:1px solid var(--border);padding:10px 16px;align-items:center;justify-content:space-between;gap:12px}
+  .sticky-cta span{font-family:var(--serif);font-weight:700;color:var(--green);font-size:16px}
+  .sticky-cta .get-app{margin:0}
+}
+.shot-img{display:block;width:100%;height:auto;border-radius:inherit}.shot-cap{font-size:12px;color:#6b6b5e;text-align:center;margin:8px 0 0}
+.phone-frame,.phone-frame.sm{height:auto!important;aspect-ratio:auto;padding:11px!important;border-radius:52px!important}
+.phone-frame > .shot-img{width:100%;aspect-ratio:393/852;object-fit:cover;border-radius:42px;display:block}
+.phone-frame:before{top:22px!important;width:30%!important;height:7.5%!important;max-height:30px;border-radius:20px!important}
+.photo-band{height:600px!important;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.45) 100%),url(assets/squad-2400.jpg) center 62%/cover no-repeat!important}
+@media(max-width:700px){.photo-band{height:440px!important;background-position:center 70%!important}}
+.photo-band{align-items:flex-start!important;background:linear-gradient(180deg,rgba(0,0,0,.38) 0%,rgba(0,0,0,0) 30%),url(assets/squad-2400.jpg) center 62%/cover no-repeat!important}
+.photo-band .line{padding:40px 0 0!important;text-shadow:0 2px 10px rgba(0,0,0,.55)!important}
+@media(max-width:700px){.photo-band{background-position:center 70%!important}.photo-band .line{font-size:24px}}
+.phone-frame{width:340px!important}.phone-frame.sm{width:340px!important}
+.detail{max-width:420px;margin:18px auto 0;border-radius:16px;overflow:hidden;box-shadow:0 10px 28px rgba(44,36,22,.18);background:#f4eee2}
+.detail img{display:block;width:100%;height:auto}
+.shot-cap{font-size:14px!important;max-width:420px;margin:12px auto 0!important}
+.trust ul{font-size:16px!important}.trust .fine{font-size:14px!important}
+.eyebrow{font-size:13px!important}
+.trio div,footer,.feature li,.feature ul{font-size:16px!important}
+@media(max-width:700px){.phone-frame,.phone-frame.sm{width:300px!important}.detail{max-width:100%}}
+.hero-phone{display:flex;flex-direction:column;align-items:center}.hero-phone .shot-cap{max-width:320px}
+</style>
+</head>
+<body>
+
+<!-- Icon set: simple line icons, inline, no external files. No emoji anywhere. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V3"/><path d="M6 4l11 3.5L6 11"/><ellipse cx="9" cy="21" rx="6" ry="1.2"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 4"/><path d="M16 6h3a3 3 0 0 1-3 4"/><path d="M12 13v4"/><path d="M8.5 20h7"/><path d="M10 17h4v3h-4z"/></symbol>
+  <symbol id="i-arrows" viewBox="0 0 24 24"><path d="M4 8h14"/><path d="M15 5l3 3-3 3"/><path d="M20 16H6"/><path d="M9 13l-3 3 3 3"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5"/><path d="M4 10h16M4 15h16M10 4v16"/></symbol>
+  <symbol id="i-cash" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-eyeoff" viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M10.6 6.1A9.8 9.8 0 0 1 12 6c5 0 8.5 4.5 9 6-.3.9-1.4 2.6-3.1 4"/><path d="M6.5 7.6C4.6 8.9 3.4 10.8 3 12c.5 1.5 4 6 9 6 1.4 0 2.7-.3 3.8-.9"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+</svg>
+
+<!-- Coming-soon preview of v3 (Al, 2026-11-18), noindex. Public launch page goes live on dunesquad.golf only at launch. -->
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><img src="assets/roundel-96.png" alt="DuneSquad logo" width="40" height="40">DuneSquad</a>
+    <div class="top-right">
+      <nav>
+        <a href="#features">What it does</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="#privacy">Privacy</a>
+      </nav>
+      <a class="get-app" href="#get">Coming soon</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Your golf trip's caddie.</h1>
+      <p class="sub">The tee times, the rides, who owes who and who's winning: in one app the whole squad shares. You set it up once. Everyone stops texting you.</p>
+      <!-- Coming-soon preview (Al, 2026-11-18): text-only store labels, no official badge artwork, no store links, no QR until the listings are live. -->
+      <div class="cta-row">
+        <span class="badges"><span class="store soon" role="img" aria-label="App Store, coming soon"><b>App Store</b><small>Coming soon</small></span><span class="store soon" role="img" aria-label="Google Play, coming soon"><b>Google Play</b><small>Coming soon</small></span></span>
+      </div>
+      <p class="cta-note">Coming soon to iPhone and Android.</p>
+    </div>
+    <div class="hero-phone"><div class="phone-frame">
+      <img class="shot-img" src="assets/shots/1-home.png" alt="DuneSquad app home screen on a golf trip day, showing the next tee time and the day's itinerary" ></div><p class="shot-cap">Side games settled between friends, outside the app. DuneSquad never handles money.</p></div>
+  </div>
+</section>
+
+<section class="problem alt">
+  <div class="wrap">
+    <div class="eyebrow">The usual way</div>
+    <h2 class="quotes">"Who do I owe?"<br>"When's the tee time?"<br>"Who won the match?"</h2>
+    <p>The organizer answers the same texts all week, and the answers get buried in the group chat. DuneSquad keeps it all with the trip, where everyone can look it up.</p>
+  </div>
+</section>
+
+
+
+<section id="features">
+  <div class="wrap">
+    <div class="intro">
+      <div class="eyebrow">What it does</div>
+      <h2>What is DuneSquad?</h2>
+      <p id="what-is">DuneSquad is a golf trip planner app for buddies trips. One organizer sets up the itinerary, tee times, rides and dinners, and the whole squad sees the same plan on iPhone or Android. It also splits shared expenses in dollars, pounds or euros and keeps a photo feed for the trip, seen only by the trip and its visitors. There are no ads and no analytics.</p>
+    </div>
+    <div class="feature">
+      <div class="text">
+        <div class="head"><svg class="icon"><use href="#i-trophy"/></svg><h3>Games and the Standings board</h3></div>
+        <p>Side games for the whole trip: ten formats, from the Team Cup (match play: foursomes, four-ball and singles) to Stableford, Skins, Nassau, Sixes, Wolf and Baseball. Every game feeds one Standings board.</p>
+        <ul>
+          <li>One person keys in the scores for the group.</li>
+          <li>The Team Cup tracks each player's wins, losses and halves all trip.</li>
+          <li>Side games settled between friends, outside the app. DuneSquad never handles money.</li>
+        </ul>
+      </div>
+      <div class="phone-frame sm"><img class="shot-img" src="assets/shots/4-team-cup.png" alt="DuneSquad Standings board for the trip's side games and Team Cup" ></div>
+    </div>
+    <div class="feature flip">
+      <div class="text">
+        <div class="head"><svg class="icon"><use href="#i-flag"/></svg><h3>The plan, where everyone can see it</h3></div>
+        <p>Add the tee times once. Everyone sees the itinerary, and anyone can add it to their calendar.</p>
+        <ul>
+          <li>Tee times, ride pickups and dinner reservations, day by day.</li>
+          <li>Each ride shows the pickup time, the driver and where to meet.</li>
+          <li>Each course has its scorecard and the weather for your tee time.</li>
+          <li>Subscribe in Google, Apple or Outlook.</li>
+        </ul>
+      </div>
+      <div class="phone-frame sm"><img class="shot-img" src="assets/shots/2-itinerary.png" alt="DuneSquad golf trip itinerary for one day, with tee times, rides and dinner" ></div>
+    </div>
+    <div class="feature">
+      <div class="text">
+        <div class="head"><svg class="icon"><use href="#i-arrows"/></svg><h3>Who owes who, squared up</h3></div>
+        <p>Splitting expenses on a golf trip is easy: log shared costs as you go. Square Up shows each player's net and the fewest payments to settle.</p>
+        <ul>
+          <li>Each expense in dollars, pounds or euros. Nothing is converted, and balances show per currency.</li>
+          <li>Tap to open Venmo, PayPal or Cash App with the amount filled in.</li>
+          <li>DuneSquad doesn't handle payments. It opens your payment app.</li>
+        </ul>
+      </div>
+      <div class="phone-frame sm"><img class="shot-img" src="assets/shots/3-square-up.png" alt="DuneSquad Square Up screen splitting shared trip expenses among the players" ></div>
+    </div>
+  </div>
+</section>
+
+<section id="games">
+  <div class="wrap">
+    <div class="feature flip">
+      <div class="text">
+        <div class="head"><svg class="icon"><use href="#i-camera"/></svg><h3>Photos and the trip feed</h3></div>
+        <p>Photos and short videos from the course, with comments and reactions, seen only by the trip and its visitors, unless you choose to share a photo.</p>
+        <ul>
+          <li>Family at home can follow along as visitors: the plan and the photos, never the expenses.</li>
+        </ul>
+      </div>
+      <div class="phone-frame sm"><img class="shot-img" src="assets/shots/5-feed.png" alt="DuneSquad trip photo feed with comments and reactions" ></div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="alt">
+  <div class="wrap">
+    <div class="eyebrow">How it works</div>
+    <!-- Source: CTO estimate (5-8 min for trip, dates, courses, hotel, invite link). Not timed with a real organizer. -->
+    <h2>Set up the basics, add the rest later</h2>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Set up the trip</h3><p>Add the dates, the courses and the hotel. Tee times and rides can come later.</p></div>
+      <div class="step"><div class="num">2</div><h3>Invite the squad</h3><p>Share a link or a code with the whole squad. Anyone can join on iPhone or Android. Visitors get a separate link.</p></div>
+      <div class="step"><div class="num">3</div><h3>Play, then square up</h3><p>Follow the day's plan, post the photos, and square up the shared costs at the end.</p></div>
+    </div>
+    <div class="mid-cta">
+      <p>Ready for the next trip?</p>
+      <span class="badges"><span class="store soon" role="img" aria-label="App Store, coming soon"><b>App Store</b><small>Coming soon</small></span><span class="store soon" role="img" aria-label="Google Play, coming soon"><b>Google Play</b><small>Coming soon</small></span></span>
+    </div>
+  </div>
+</section>
+
+<section class="photo-band" role="img" aria-label="Eight friends on a golf trip, standing under a big oak tree on an English heathland course">
+  <div class="wrap"><p class="line">Built on a real trip with the squad.</p></div>
+</section>
+<!-- Stats line confirmed by Al (2026-10-15): 8 courses, 8 rounds. Source: CTO (Ben Hogan) trip data, England 2026, main 2e6fe97.
+     11 days; 8 courses; 8 members; 112 photos (may include videos) -> "100+"; 78 expenses. Aggregate only, no names. -->
+<div class="stats" aria-label="England trip in numbers">
+  <div class="wrap"><p>11 days &middot; 8 courses &middot; 8 players &middot; 78 expenses &middot; 100+ photos and videos</p><small>The founder's England trip, 2026</small></div>
+</div>
+
+<section id="faq">
+  <div class="wrap faq">
+    <div class="eyebrow">FAQ</div>
+    <h2>Golf trip planner FAQ</h2>
+    <div style="height:16px"></div>
+    <details open><summary>Does everyone see tee times, pickups and dinner without texting me?<svg class="icon"><use href="#i-plus"/></svg></summary>
+      <p>Yes. Add them once and they're on the trip for everyone. Home shows what's up next, and anyone can subscribe in Google, Apple or Outlook.</p></details>
+    <details><summary>Not everyone has an iPhone. Does that matter?<svg class="icon"><use href="#i-plus"/></svg></summary>
+      <p>No. DuneSquad is coming to both iPhone and Android, so the whole squad can use it.</p></details>
+    <details><summary>Does it work for team match play or our usual side games?<svg class="icon"><use href="#i-plus"/></svg></summary>
+      <p>Yes. There are ten formats, including the Team Cup, Stableford, Stroke Play, Skins, Nassau, Sixes, Wolf and Baseball. One person keys in the scores, and every game feeds one Standings board.</p></details>
+    <details><summary>Can it find the course info and scorecard for us?<svg class="icon"><use href="#i-plus"/></svg></summary>
+      <p>Usually. When you open a course, the app looks for the scorecard and saves it marked "not yet confirmed" for you to check. You can also snap the printed card.</p></details>
+    <details><summary>Can friends and family follow along?<svg class="icon"><use href="#i-plus"/></svg></summary>
+      <p>Yes. Each trip has a visitor link. Visitors see the plan and the photos and can comment and react, but never see the expenses.</p></details>
+    <details><summary>We're playing abroad. What about pounds and euros?<svg class="icon"><use href="#i-plus"/></svg></summary>
+      <p>Log each expense in dollars, pounds or euros. Nothing is converted, and balances show separately for each currency.</p></details>
+    <details><summary>What does it cost?<svg class="icon"><use href="#i-plus"/></svg></summary>
+      <p>One $69 Trip Pass covers the whole squad. Create your trip free; the pass unlocks invites. Split across eight people, including the organizer, that’s about $8.63 each, and less per person with a larger squad. Add the pass to your trip expenses to track everyone’s share and settle up outside the app.</p></details>
+    <details><summary>Does DuneSquad handle the money?<svg class="icon"><use href="#i-plus"/></svg></summary>
+      <p>No. DuneSquad doesn't handle payments. It works out who owes who and opens your payment app.</p></details>
+  </div>
+</section>
+
+
+
+<section class="close-cta" id="get">
+  <div class="wrap">
+    <h2>Your golf trip's caddie.</h2>
+    <div class="cta-row" style="justify-content:center"><span class="badges"><span class="store soon" role="img" aria-label="App Store, coming soon"><b>App Store</b><small>Coming soon</small></span><span class="store soon" role="img" aria-label="Google Play, coming soon"><b>Google Play</b><small>Coming soon</small></span></span></div>
+  </div>
+</section>
+
+<section class="trust" id="privacy" aria-label="Privacy">
+  <div class="wrap">
+    <ul>
+      <li><svg class="icon"><use href="#i-eyeoff"/></svg>No ads. No analytics.</li>
+      <li><svg class="icon"><use href="#i-lock"/></svg>Your trip's plans, scores, expenses and feed are for your squad. Visitors see the plan and photos, never the expenses.</li>
+      <li><svg class="icon"><use href="#i-shield"/></svg>DuneSquad doesn't handle payments.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="#"><img src="assets/roundel-96.png" alt="DuneSquad logo" width="32" height="32">DuneSquad</a>
+      <p style="margin-top:8px">Questions: <a href="mailto:support@dunesquad.golf">support@dunesquad.golf</a></p>
+      <p style="margin-top:6px;font-size:13px;color:var(--muted)">&copy; 2026 DuneSquad LLC</p>
+    </div>
+    <div class="links">
+      <a href="https://dunesquad.golf/terms">Terms</a>
+      <a href="https://dunesquad.golf/privacy">Privacy</a>
+      <a href="https://dunesquad.golf/support">Support</a>
+      <a href="https://dunesquad.golf/delete-account">Delete account</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile-only sticky bar, CSS only (position:fixed), no JS. -->
+<div class="sticky-cta"><span>DuneSquad</span><a class="get-app" href="#get">Coming soon</a></div>
+</body>
+</html>
